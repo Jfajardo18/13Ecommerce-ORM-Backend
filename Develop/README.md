@@ -6,7 +6,7 @@ This project involves building the back end for an e-commerce site. This applica
 E-commerce is a significant factor in the electronics industry, enabling businesses and consumers to conveniently engage in online buying and selling of electronic products. Understanding the fundamental architecture of e-commerce sites is crucial for developers due to the prevalence of platforms like Shopify and WooCommerce.
 
 # Walkthrough Video
-
+[![Watch the video]] https://youtu.be/c4YtO_SHEcQ
 
 # Installation
 To install necessary dependencies, run the following command:

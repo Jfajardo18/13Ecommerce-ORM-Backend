@@ -45,17 +45,22 @@ router.post('/', async (req, res) => {
 
 router.put('/:id', async (req, res) => {
   // update a category by its `id` value
-  await Category.update(req.body, {
-    where: {
-      id: req.params.id,
-    },
-  })
-  .then((category) => {
-    res.json.status(200).json(category);
-  }) .catch((err) => {
+  try {
+    const [numAffectedRows] = await Category.update(req.body, {
+      where: {
+        id: req.params.id,
+      },
+    });
+
+    if (numAffectedRows > 0) {
+      res.status(200).json({ message: 'Category updated successfully.' });
+    } else {
+      res.status(404).json({ message: 'No category found with this id.' });
+    }
+  } catch (err) {
     console.log(err);
     res.status(400).json(err);
-  });
+  }
 });
 
 router.delete('/:id', (req, res) => {
